@@ -1,0 +1,8 @@
+# add master-of-seat tag to video cards (0x10de is NVIDIA vendor id)
+SUBSYSTEM=="drm", KERNEL=="card[0-9]*", ATTRS{vendor}=="0x10de", DRIVERS=="nvidia", TAG+="master-of-seat"
+
+# assign USB ports
+TAG=="seat", DEVPATH=="/devices/pci0000:00/0000:00:1c.6/0000:0a:00.0/*", ENV{ID_SEAT}="seat-1", TAG+="seat-1"
+
+# assign video cards
+TAG=="seat", DEVPATH=="/devices/pci0000:00/0000:00:01.0/0000:01:00.0/*", ENV{ID_SEAT}="seat-1", TAG+="seat-1"
