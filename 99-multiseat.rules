@@ -1,3 +1,5 @@
+# Location /etc/udev/rules.d/99-multiseat.rules
+
 # add master-of-seat tag to video cards (0x10de is NVIDIA vendor id)
 SUBSYSTEM=="drm", KERNEL=="card[0-9]*", ATTRS{vendor}=="0x10de", DRIVERS=="nvidia", TAG+="master-of-seat"
 
